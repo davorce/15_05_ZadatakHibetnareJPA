@@ -17,8 +17,6 @@ public class Main {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
 
-        List<Ingredients> ings = new ArrayList<>();
-
         Meal meal1 = new Meal();
         meal1.setName("Pizza");
         em.persist(meal1);
@@ -33,21 +31,18 @@ public class Main {
 
         Ingredients ingredients1 = new Ingredients();
         ingredients1.setName("Rajcica");
-        ings.add(ingredients1);
         meal1.getIngredients().add(ingredients1);
         meal2.getIngredients().add(ingredients1);
         meal3.getIngredients().add(ingredients1);
         em.persist(ingredients1);
 
         Ingredients ingredients2 = new Ingredients();
-        ings.add(ingredients2);
         ingredients2.setName("Sir");
         meal1.getIngredients().add(ingredients2);
         meal2.getIngredients().add(ingredients2);
         em.persist(ingredients2);
 
         Ingredients ingredients3 = new Ingredients();
-        ings.add(ingredients3);
         ingredients3.setName("Zelje");
         meal2.getIngredients().add(ingredients3);
         meal3.getIngredients().add(ingredients3);
